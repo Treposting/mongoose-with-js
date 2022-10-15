@@ -11,7 +11,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 /* here will be all the imports routes */
-
+const testRoute = require("./routes/testRoute");
 /* here will be the all the routes */
 app.get("/", (req, res) => {
     res.render("index");
@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 
 /* Here is the User Routes */
 
+app.use("/test", testRoute);
 
 // 404 response
 app.all("*", (req, res) => {
